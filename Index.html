@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunwalkers Studios - NerdTales</title>
+    <!-- Lade Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lade Pixel-Schriftart für den gesamten Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration - Angepasst an die Logo-Farben */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'logo-dark-bg': '#2A1A2A', 
+                        'logo-card-bg': '#402F40', 
+                        'logo-accent-orange': '#FFB733',
+                        'logo-text-light': '#E8E0D2', 
+                    },
+                    fontFamily: {
+                        /* Setzt die Pixel-Schriftart als Standard für alles */
+                        pixel: ['"Press Start 2P"', 'cursive'], 
+                    },
+                    boxShadow: {
+                        'logo-glow': '0 0 8px #FFB733, 0 0 12px rgba(255, 183, 51, 0.5)',
+                    }
+                }
+            }
+        }
+
+        /* Hintergrundmuster im Pixel-Stil und Schriftart-Definition */
+        body {
+            background-color: #2A1A2A; 
+            /* Pixel-Raster im Hintergrund */
+            background-image: linear-gradient(0deg, transparent 24%, #402F40 25%, #402F40 26%, transparent 27%, transparent 74%, #402F40 75%, #402F40 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, #402F40 25%, #402F40 26%, transparent 27%, transparent 74%, #402F40 75%, #402F40 76%, transparent 77%, transparent);
+            background-size: 50px 50px; 
+            color: #E8E0D2;
+            min-height: 100vh;
+            font-family: 'Press Start 2P', cursive; /* Ganzer Body ist Pixel-Schrift */
+            font-size: 10px; /* Kleinere Basisgröße für bessere Lesbarkeit der Pixel-Schrift */
+        }
+
+        /* Hilfsklasse für den Orange-Text-Glow */
+        .text-logo-glow {
+            text-shadow: 0 0 5px #FFB733, 0 0 10px rgba(255, 183, 51, 0.7);
+        }
+
+        /* Entfernt standardmäßige Rundungen, da Pixel-Stil meist scharfe Kanten hat */
+        .pixel-border {
+            border-radius: 0.5rem; /* Leichte Rundung beibehalten, um modernes Tailwind-Design zu ehren */
+            border-style: solid;
+        }
+
+        /* Stil für den NerdTales-Abschnitt als Haupt-Game-Screen */
+        .crt-container {
+            border: 4px solid #FFB733;
+            box-shadow: 0 0 20px rgba(255, 183, 51, 0.8);
+            overflow: hidden;
+            position: relative;
+            border-radius: 0; /* Scharfe Kanten für den Bildschirm */
+        }
+        
+        /* Überschreibt die Listen-Styles der Pixel-Schrift, damit Listenpunkte sichtbar sind */
+        .list-pixel {
+            list-style-type: none; /* Entfernt native Bullets */
+            padding-left: 1.5em;
+        }
+        .list-pixel li::before {
+            content: '>'; /* Pixel-Bullet */
+            color: #FFB733;
+            font-size: 1em;
+            display: inline-block;
+            width: 1.5em;
+            margin-left: -1.5em;
+        }
+    </style>
+</head>
+<body class="antialiased text-logo-text-light">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-10 bg-logo-dark-bg bg-opacity-95 p-4 border-b-4 border-logo-accent-orange shadow-logo-glow">
+        <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap">
+            <!-- Logo mit Bild des Users -->
+            <a href="#" class="flex items-center space-x-2">
+                <!-- IMPORTANT: Using user uploaded image: SunwalkersStudiosLogo.png -->
+                <img src="SunwalkersStudiosLogo.png" onerror="this.onerror=null; this.src='https://placehold.co/60x60/2A1A2A/FFB733?text=Logo';" alt="Sunwalkers Studios Logo" class="w-10 h-10 sm:w-12 sm:h-12">
+                <span class="text-base text-logo-accent-orange text-logo-glow hidden sm:block">SUNWALKERS</span>
+            </a>
+            
+            <!-- Navigation für mobile und Desktop -->
+            <nav class="space-x-2 sm:space-x-4 flex">
+                <a href="#studio" class="text-logo-text-light hover:text-logo-accent-orange text-xs sm:text-sm p-1 sm:p-2 transition duration-300">STUDIO</a>
+                <a href="#nerdtales" class="text-logo-text-light hover:text-logo-accent-orange text-xs sm:text-sm p-1 sm:p-2 transition duration-300">NERDTALES</a>
+                <a href="#minigame" class="text-logo-text-light hover:text-logo-accent-orange text-xs sm:text-sm p-1 sm:p-2 transition duration-300">ROBOCAT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main class="p-4 md:p-8">
+
+        <!-- Sektion 0: Hero / Intro -->
+        <section class="max-w-4xl mx-auto text-center py-16 md:py-24 space-y-4">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl text-logo-accent-orange text-logo-glow leading-snug">
+                SUNWALKERS
+            </h1>
+            <h2 class="text-lg sm:text-xl md:text-2xl text-logo-text-light">
+                <span class="text-logo-glow">STUDIOS</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-logo-text-light max-w-2xl mx-auto pt-4 border-t-2 border-logo-accent-orange mt-6">
+                Willkommen, Walker! Wir sind die Hüter der Pop-Kultur und Erbauer von Pixel-Welten.
+            </p>
+        </section>
+
+        <!-- Sektion 1: Über Sunwalkers Studios -->
+        <div id="studio" class="h-16"></div> <!-- Anker-Offset -->
+        <section class="max-w-5xl mx-auto bg-logo-card-bg p-6 md:p-12 pixel-border ring-4 ring-logo-accent-orange shadow-logo-glow mb-16">
+            <h3 class="text-xl sm:text-2xl text-logo-accent-orange mb-6 border-b-2 pb-2">
+                // STUDIO-MANIFEST
+            </h3>
+            <p class="text-xs sm:text-sm text-logo-text-light leading-relaxed">
+                Sunwalkers Studios wurde mit der Mission gegründet, die vielfältigen und verrückten Ecken der Pop-Kultur in interaktive Abenteuer zu verwandeln. Wir lieben **Pixel-Art**, tiefgründiges Storytelling und den humorvollen Twist, der Nostalgie auf ein neues Level hebt. Unsere Spiele sind Liebesbriefe an die Klassiker, gebaut mit der Technologie von heute.
+            </p>
+        </section>
+
+        <!-- Sektion 2: NerdTales - Das Pop-Culture-Adventure -->
+        <div id="nerdtales" class="h-16"></div> <!-- Anker-Offset -->
+        <section class="max-w-7xl mx-auto mb-16 crt-container bg-logo-dark-bg p-6 md:p-12">
+            <h3 class="text-2xl sm:text-3xl text-logo-accent-orange mb-4 text-logo-glow">
+                NERDTALES
+            </h3>
+            <p class="text-sm text-logo-text-light opacity-80 mb-10">
+                Ein Point-and-Click-Adventure, in dem Marty mithilfe des ZeitLorean durch Pop-Culture-Sektoren reist, um die Vielfalt der Kultur zu bewahren.
+            </p>
+            
+            <!-- Core Loop Übersicht -->
+            <div class="grid md:grid-cols-3 gap-4 sm:gap-6 text-center mb-12">
+                <div class="p-3 sm:p-4 bg-logo-card-bg pixel-border border-2 border-logo-accent-orange shadow-lg">
+                    <span class="text-xs text-logo-accent-orange">START</span>
+                    <p class="text-sm mt-1 sm:mt-2 text-logo-text-light">HUB: NEO-RETROVILLE</p>
+                </div>
+                <div class="p-3 sm:p-4 bg-logo-card-bg pixel-border border-2 border-logo-accent-orange shadow-lg">
+                    <span class="text-xs text-logo-accent-orange">ZIEL</span>
+                    <p class="text-sm mt-1 sm:mt-2 text-logo-text-light">ARTEFAKTE SAMMELN</p>
+                </div>
+                <div class="p-3 sm:p-4 bg-logo-card-bg pixel-border border-2 border-logo-accent-orange shadow-lg">
+                    <span class="text-xs text-logo-accent-orange">ENDE</span>
+                    <p class="text-sm mt-1 sm:mt-2 text-logo-text-light">NORM-O-TRON FIGHT</p>
+                </div>
+            </div>
+
+            <!-- Welten-Grid -->
+            <h4 class="text-xl sm:text-2xl text-logo-accent-orange mb-6 border-b-2 pb-2 border-logo-text-light">
+                // WELTENSEKTOREN
+            </h4>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Welt 1: Pixel-Fantasy -->
+                <div class="bg-logo-card-bg p-4 pixel-border border border-logo-text-light hover:ring-2 ring-logo-accent-orange transition duration-300">
+                    <h5 class="text-base text-logo-accent-orange mb-1">FANTASY</h5>
+                    <p class="text-xs text-logo-text-light opacity-80">Der Eine Controller.</p>
+                </div>
+                <!-- Welt 2: Meme-Chaos -->
+                <div class="bg-logo-card-bg p-4 pixel-border border border-logo-text-light hover:ring-2 ring-logo-accent-orange transition duration-300">
+                    <h5 class="text-base text-logo-accent-orange mb-1">MEME-CHAOS</h5>
+                    <p class="text-xs text-logo-text-light opacity-80">Das Viral-Tablet.</p>
+                </div>
+                <!-- Welt 3: Action-B-Movie -->
+                <div class="bg-logo-card-bg p-4 pixel-border border border-logo-text-light hover:ring-2 ring-logo-accent-orange transition duration-300">
+                    <h5 class="text-base text-logo-accent-orange mb-1">B-MOVIE</h5>
+                    <p class="text-xs text-logo-text-light opacity-80">Die Stuntkamera.</p>
+                </div>
+                <!-- Welt 4: Classic-Arcade -->
+                <div class="bg-logo-card-bg p-4 pixel-border border border-logo-text-light hover:ring-2 ring-logo-accent-orange transition duration-300">
+                    <h5 class="text-base text-logo-accent-orange mb-1">ARCADE</h5>
+                    <p class="text-xs text-logo-text-light opacity-80">Der Power-Glove.</p>
+                </div>
+                <!-- Welt 5: 30er Cartoon -->
+                <div class="bg-logo-card-bg p-4 pixel-border border border-logo-text-light hover:ring-2 ring-logo-accent-orange transition duration-300">
+                    <h5 class="text-base text-logo-accent-orange mb-1">CARTOON</h5>
+                    <p class="text-xs text-logo-text-light opacity-80">Der Animator-Pinsel.</p>
+                </div>
+                <!-- Welt 6: Sci-Fi Tech -->
+                <div class="bg-logo-card-bg p-4 pixel-border border border-logo-text-light hover:ring-2 ring-logo-accent-orange transition duration-300">
+                    <h5 class="text-base text-logo-accent-orange mb-1">SCI-FI TECH</h5>
+                    <p class="text-xs text-logo-text-light opacity-80">Der Licht-Stab.</p>
+                </div>
+                <!-- Welt 7: Rock'n'Roll -->
+                <div class="bg-logo-card-bg p-4 pixel-border border border-logo-text-light hover:ring-2 ring-logo-accent-orange transition duration-300">
+                    <h5 class="text-base text-logo-accent-orange mb-1">ROCK'N'ROLL</h5>
+                    <p class="text-xs text-logo-text-light opacity-80">Die Kraft-Gitarre.</p>
+                </div>
+                <!-- Welt 8: Grusel-Adventure -->
+                <div class="bg-logo-card-bg p-4 pixel-border border border-logo-text-light hover:ring-2 ring-logo-accent-orange transition duration-300">
+                    <h5 class="text-base text-logo-accent-orange mb-1">GRUSEL</h5>
+                    <p class="text-xs text-logo-text-light opacity-80">Die Übernatürliche Kamera.</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 sm:mt-10 text-center">
+                <a href="#" class="inline-block px-6 py-3 text-xs sm:text-sm bg-logo-accent-orange text-logo-dark-bg shadow-logo-glow pixel-border hover:bg-logo-text-light transition duration-300 uppercase">
+                    WISHLIST AUF STEAM (BALD VERFÜGBAR)
+                </a>
+            </div>
+        </section>
+
+        <!-- Sektion 3: RoboCatRun Mini-Game Teaser -->
+        <div id="minigame" class="h-16"></div> <!-- Anker-Offset -->
+        <section class="max-w-4xl mx-auto bg-logo-card-bg p-6 md:p-12 pixel-border ring-4 ring-logo-accent-orange shadow-logo-glow mb-16">
+            <h3 class="text-xl sm:text-2xl text-logo-accent-orange mb-6 border-b-2 pb-2 border-logo-text-light">
+                // MINI-GAME: ROBOCATRUN
+            </h3>
+            <div class="flex flex-col lg:flex-row gap-6 items-center">
+                <div class="lg:w-1/2">
+                    <p class="text-xs sm:text-sm text-logo-text-light leading-relaxed mb-4">
+                        Neben dem großen Adventure erwartet euch in NerdTales auch ein knackiges Arcade-Erlebnis: **RoboCatRun!** Ein endloser Runner im Stil klassischer Handheld-Spiele, bei dem ihr als RoboCat durch die glitchenden Sektoren von Neo-Retroville rennt.
+                    </p>
+                    <ul class="list-pixel text-logo-accent-orange space-y-2 text-xs sm:text-sm">
+                        <li><span class="text-logo-text-light">Pixel-Perfektes Timing.</span></li>
+                        <li><span class="text-logo-text-light">Highscore-Jagd.</span></li>
+                        <li><span class="text-logo-text-light">Eingebettet in die NerdTales-Welt.</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Mockup des Minigames (einfacher Kasten) -->
+                <div class="lg:w-1/2 w-full aspect-video bg-logo-dark-bg border-4 border-logo-accent-orange shadow-xl shadow-logo-glow flex items-center justify-center text-lg sm:text-xl text-logo-accent-orange">
+                    [ROBOCATRUN - START-SCREEN]
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto text-center py-8 border-t-2 border-logo-accent-orange mt-12">
+        <p class="text-logo-text-light opacity-50 text-xs sm:text-sm">
+            &copy; 2025 SUNWALKERS STUDIOS. DOMAIN: SUNWALKERSSTUDIOS.DE
+        </p>
+        <p class="text-logo-text-light opacity-50 text-xs mt-1">
+            ALLE RECHTE VORBEHALTEN. WILLKOMMEN IM RETRO-GRID.
+        </p>
+    </footer>
+
+</body>
+</html>
+
